@@ -354,7 +354,7 @@ function Hero() {
                         VIEW WORK
                     </a>
                     <a
-                        href="/resume.pdf"
+                        href="/resume-2026.pdf"
                         target="_blank"
                         rel="noreferrer"
                         style={{
