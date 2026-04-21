@@ -63,6 +63,24 @@ const PROJECTS = [
         repo: "https://github.com/mward3505/timeforge",
         highlight: true,
     },
+    {
+        name: "Wonce World",
+        tagline: "Bilingual learning adventures for little minds",
+        description:
+            "A fun, bilingual (English/Spanish) kids learning app built with React Native & Expo. Children explore letters, numbers, colors, and shapes through flashcards, quizzes, and a Color Hop mini game — all behind a parent-protected PIN with support for multiple kid profiles.",
+        tech: [
+            "React Native",
+            "Expo SDK 54",
+            "TypeScript",
+            "expo-speech",
+            "react-native-svg",
+            "AsyncStorage",
+        ],
+        live: null,
+        liveLabel: "DEMO COMING SOON",
+        repo: "https://github.com/mward3505/warpos-world",
+        highlight: true,
+    },
 ];
 
 function useInView(threshold = 0.15) {
@@ -801,27 +819,40 @@ function Projects() {
                             </div>
 
                             <div style={{ display: "flex", gap: "1rem" }}>
-                                <a
-                                    href={project.live}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    style={{
-                                        fontFamily: "'DM Mono', monospace",
-                                        fontSize: "0.8rem",
-                                        color: "#00e5ff",
-                                        textDecoration: "none",
-                                        letterSpacing: "0.08em",
-                                        transition: "opacity 0.2s",
-                                    }}
-                                    onMouseEnter={(e) =>
-                                        (e.target.style.opacity = "0.7")
-                                    }
-                                    onMouseLeave={(e) =>
-                                        (e.target.style.opacity = "1")
-                                    }
-                                >
-                                    LIVE DEMO ↗
-                                </a>
+                                {project.live ? (
+                                    <a
+                                        href={project.live}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        style={{
+                                            fontFamily: "'DM Mono', monospace",
+                                            fontSize: "0.8rem",
+                                            color: "#00e5ff",
+                                            textDecoration: "none",
+                                            letterSpacing: "0.08em",
+                                            transition: "opacity 0.2s",
+                                        }}
+                                        onMouseEnter={(e) =>
+                                            (e.target.style.opacity = "0.7")
+                                        }
+                                        onMouseLeave={(e) =>
+                                            (e.target.style.opacity = "1")
+                                        }
+                                    >
+                                        LIVE DEMO ↗
+                                    </a>
+                                ) : (
+                                    <span
+                                        style={{
+                                            fontFamily: "'DM Mono', monospace",
+                                            fontSize: "0.8rem",
+                                            color: "rgba(0,229,255,0.35)",
+                                            letterSpacing: "0.08em",
+                                        }}
+                                    >
+                                        {project.liveLabel ?? "COMING SOON"}
+                                    </span>
+                                )}
                                 <a
                                     href={project.repo}
                                     target="_blank"
